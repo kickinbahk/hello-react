@@ -1,15 +1,26 @@
-  var Greeter = React.createClass({
-    render: function () {
-      return (
-        <div>
-          <h1>Hello, React!</h1>
-          <p>This is from a component</p>
-        </div>
-      )
+var Greeter = React.createClass({
+  getDefaultProps: function () {
+    return {
+      name: 'React',
+      message: 'This is from a component'
     }
-  })
+  },
+  render: function () {
+    var name = this.props.name
+    var givenMessage = this.props.message
+    return (
+      <div>
+        <h1>Hello, {name}!</h1>
+        <p>{givenMessage}</p>
+      </div>
+    )
+  }
+})
 
-  ReactDOM.render(
-    <Greeter/>,
-    document.getElementById('app')
-  )
+var firstName = 'World'
+var message = 'Welcome Home...'
+
+ReactDOM.render(
+  <Greeter name={firstName} message={message} />,
+  document.getElementById('app')
+)
