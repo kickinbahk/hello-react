@@ -1,4 +1,6 @@
-var Greeter = React.createClass({
+/* global React, ReactDOM */
+
+var Greeter = React.createClass({ // eslint-disable-line no-use-before-define
   getDefaultProps: function () {
     return {
       name: 'React',
