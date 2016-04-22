@@ -20,11 +20,11 @@ var Greeter = React.createClass({
     var name = nameRef.value
     nameRef.value = ''
 
-    if (typeof name === 'string' && name.length > 0)
-
-    this.setState({
-      name: name
-    })
+    if (typeof name === 'string' && name.length > 0) {
+      this.setState({
+        name: name
+      })
+    }
   },
   render: function () {
     var name = this.state.name
